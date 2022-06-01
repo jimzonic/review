@@ -104,8 +104,55 @@ $date = date('d-m-y h:i:s');
             echo "Department: $dep"; ?> </td>
         </tr>
         <tr> 
-            <td>  </td>
+            <td><?php 
+            $year = $_POST['year'];
+            echo "YEAR REVIEW : $year";
+            ?>
+            </td>
         </tr>
+            </table>
+            <br>
+            <br>
+        <table id=tab2 >
+        <form id="form2" method = post >
+          <th>  Ratings for the employee: 1-5 </th>
+          <tr>
+            <td>
+            Job: <br>
+            <input type="number" name="job" id="job">
+            </td>
+            </tr>
+            <tr>
+            <td>
+            Knowledge: <br>
+            <input type="number" name="know" id="know">
+            </td>
+            </tr>
+            <tr>
+            <td>
+            Work Quality: <br>
+            <input type="number" name="work" id="work">
+            </td>
+            </tr>
+            <tr>
+            <td>
+            Initiative: <br>
+            <input type="number" name="init" id="init">
+            </td>
+            </tr>
+            <tr>
+                <td>
+            Communication: <br>
+            <input type="number" name="com" id="com">
+            </td>
+            </tr>
+            <tr>
+                <td>
+            Dependability: <br>
+            <input type="number" name="dep" id="dep">
+            </td>
+            </tr>
+            </form>
             </table>
         </div>
         </body>

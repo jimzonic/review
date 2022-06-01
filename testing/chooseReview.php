@@ -79,7 +79,12 @@ if ($user_check != "DMCEO"){ ?>
     <h><?php echo $date; ?></h>
       <h1>Welcome <?php echo "$login_session $login_session2"; ?></h1> 
       <h2><a href = "logout.php">Sign Out</a></h2>
-  
+      <div>
+      <button type=button> <a href = "createReview.php"> CREATE REVIEW </a> </button>
+      <br>
+      <br>
+      <br>
+</div>
    <div>CURRENT REVIEWS</div>
    <br>
       <table>
@@ -180,17 +185,16 @@ if ($user_check != "DMCEO"){ ?>
          <td><?php echo "COMPLETED"?></td>
            <td><?php echo $row2["date_completed"]?></td> 
             </tr> 
-          <br> 
-         <br>
-   <div> <a href = "createReview.php"> CREATE REVIEW </a> </div>
+            
+
 <?php
  } } 
 
  $db->close(); ?>
 
          </table>
-     
-  
+      <br>
+ 
 
  </body>
    

@@ -180,16 +180,17 @@ if ($user_check != "DMCEO"){ ?>
          <td><?php echo "COMPLETED"?></td>
            <td><?php echo $row2["date_completed"]?></td> 
             </tr> 
-         
+          <br> 
+         <br>
+   <div> <a href = "createReview.php"> CREATE REVIEW </a> </div>
 <?php
  } } 
 
  $db->close(); ?>
 
          </table>
-      <br>
-   <br>
- <div> <a href = "createReview.php"> CREATE REVIEW </a> </div>
+     
+  
 
  </body>
    

@@ -59,7 +59,7 @@ $date = date('d-m-y h:i:s');
             Enter Year:
             <input type="number" id ="year"  name = "year" max =2030 min=2022 required >
             <br>
-            <input type="submit" name="Submit" value="Select" onclick = "validate()"/>
+            <button type="submit" name="Submit"  onclick = "validate()">SELECT</button>
             <div id = "error"> </div>
         </form>
        
@@ -118,16 +118,11 @@ $date = date('d-m-y h:i:s');
           <th>  Ratings for the employee: 1-5 </th>
           <tr>
             <td>
-            Job: <br>
+            Job Knowldge: <br>
             <input type="number" name="job" id="job">
             </td>
             </tr>
-            <tr>
-            <td>
-            Knowledge: <br>
-            <input type="number" name="know" id="know">
-            </td>
-            </tr>
+          
             <tr>
             <td>
             Work Quality: <br>
@@ -152,8 +147,54 @@ $date = date('d-m-y h:i:s');
             <input type="number" name="dep" id="dep">
             </td>
             </tr>
+            <tr>
+            <td>
+            Additional Comments: <br>
+            <input type="text" name="comment" id="comment">
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Is it complete already?:</p>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+             <label for="Y">YES</label><br>
+             <input type="radio" id="ncom" name="ncom" value="NO">
+              </td>
+            </tr>
+           
+            <tr>
+                <td>
+            <button type="submit" name="sub" id = "sub" > SUBMIT </button>
+            </td>
+            </tr>
             </form>
             </table>
         </div>
+    <?php   
+    if (isset($_POST ['sub'])) {
+   $year_rev = $_POST['year'];
+   $employid = $_POST['employee'];
+   $job = $_POST["job"];
+   $work = $_POST['work'];
+   $init = $_POST['init'];
+   $com = $_POST['com'];
+   $dep = $_POST['dep'];
+   $comment = $_POST['comment'];
+   $date = date('d-m-y');
+ $insert = "INSERT INTO review (emloyee_id, review_year, job_knowledge, work_quality, initiative, communication , dependability , additional_comment,date_completed)
+VALUES ('$employid', '$year_rev', '$job', '$work', '$init' , '$com', '$dep', '$comment' ,'$date' )";
+
+$add = mysqli_query ($db,$insert)
+or die (mysqli_error());
+
+if($add){
+echo "Form Submitted Successfully";
+
+} else {
+
+echo "Form not submitted.";
+}
+    }
+?>
         </body>
         </html>
